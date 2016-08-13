@@ -2,7 +2,7 @@ FROM buildpack-deps:jessie
 
 RUN apt-get update && apt-get install sudo -y \
  && curl -sSf https://static.rust-lang.org/rustup.sh | sh \
- && cargo install --git https://github.com/ethcore/parity.git parity \
+ && cargo install --git https://github.com/ethcore/parity.git parity --tag v1.3.0 \
  && strip /root/.cargo/bin/parity \
  && cp -v /root/.cargo/bin/parity /usr/local/bin/ \
  && /usr/local/lib/rustlib/uninstall.sh \
